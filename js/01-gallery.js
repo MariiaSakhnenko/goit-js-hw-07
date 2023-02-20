@@ -1,25 +1,25 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-const galleryItems1 = document.querySelector(".gallery");
+const galleryItems1 = document.querySelector('.gallery');
 
 const gallerySelector = (images) => {
     return images
         .map(({ preview, original, description }) => {
             return `<div class = "gallery__item"><a class = "gallery__link" href = ${original}><img class = "gallery__image" src = "${preview}" data-source = ${original} alt = "${description}"></div>`;
         })
-        .join("");
+        .join('');
 };
 
 const imagesMarkup = gallerySelector(galleryItems);
 
-galleryItems1.insertAdjacentHTML("afterbegin", imagesMarkup);
-galleryItems1.addEventListener("click", gallerySelect1);
+galleryItems1.insertAdjacentHTML('afterbegin', imagesMarkup);
+galleryItems1.addEventListener('click', gallerySelect1);
 
 function gallerySelect1(event) {
     event.preventDefault();
 
-    if (event.target.nodeName !== "IMG") {
+    if (event.target.nodeName !== 'IMG') {
         return;
     }
 
